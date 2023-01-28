@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "DersAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model OgrenciNotMvc.Models.EntityFramework.TBLDERSLER
+@using (Html.BeginForm("DersAdd", "Default", FormMethod.Post))
+{
+    @Html.Label("Ders Adı");
+    @Html.TextBoxFor(x => x.DERSAD, new { @class = "form-control" });
+    <br />
+
+    <button class="btn btn-success" type="submit">Kaydet</button>
+}
+
+

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model OgrenciNotMvc.Models.EntityFramework.TBLNOTLAR
+
+@using (Html.BeginForm("Guncelle", "Notlar", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.NOTID)
+
+
+    @*@Html.Label("Öğrenci Adı")
+    @Html.DropDownListFor(x => x.OGRID, (List<SelectListItem>)ViewBag.ogr, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ders Adı")
+    @Html.DropDownListFor(x => x.DERSID, (List<SelectListItem>)ViewBag.ders, new { @class = "form-control" })
+    <br />*@
+    @Html.Label("Sınav 1")
+    @Html.TextBoxFor(x => x.SINAV1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sınav 2")
+    @Html.TextBoxFor(x => x.SINAV2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sınav 3")
+    @Html.TextBoxFor(x => x.SINAV3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ortalama")
+    @Html.TextBoxFor(x => x.ORTALAMA, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durum")
+    @Html.TextBoxFor(x => x.DURUM, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success" type="submit">Guncelle</button>
+}

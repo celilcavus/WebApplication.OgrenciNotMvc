@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<OgrenciNotMvc.Models.EntityFramework.TBLDERSLER>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ders Adı</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DERSID</td>
+                    <td>@item.DERSAD</td>
+                    <td><a href="/Default/Guncelle/@item.DERSID" class="btn btn-sm btn-warning">Güncelle</a></td>
+                    <td><a href="/Default/Sil/@item.DERSID" class="btn btn-sm btn-danger">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+@Html.ActionLink("Ders Ekle", "DersAdd", "Default", new { @class = "btn btn-outline-primary" })

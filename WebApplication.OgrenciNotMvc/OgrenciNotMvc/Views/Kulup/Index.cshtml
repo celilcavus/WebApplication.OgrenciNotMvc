@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<OgrenciNotMvc.Models.EntityFramework.TBLKULUPLER>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kulup Adı</th>
+            <th>Kulup Kontejan</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.KULUPID</td>
+                <td>@item.KULUPAD</td>
+                <td>@item.KULUPKONTEJAN</td>
+                <td><a href="/Kulup/Guncelle/@item.KULUPID" class="btn btn-sm btn-warning">Güncelle</a></td>
+                <td><a href="/Kulup/Sil/@item.KULUPID" class="btn btn-sm btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Kulüp Ekle", "KulupAdd", "Kulup", new { @class = "btn btn-outline-primary" })

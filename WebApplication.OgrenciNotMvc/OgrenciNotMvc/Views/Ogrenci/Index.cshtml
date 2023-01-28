@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<OgrenciNotMvc.Models.EntityFramework.TBLOGRENCILER>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Cinsiyet</th>
+            <th>Kulup</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OGRENCIID</td>
+                <td>@item.OGRAD</td>
+                <td>@item.OGRSOYAD</td>
+                <td>@item.OGRCINSIYET</td>
+                <td>@item.OGRKULUP</td>
+                <td><a href="/Ogrenci/Guncelle/@item.OGRENCIID" class="btn btn-sm btn-warning">Güncelle</a></td>
+                <td><a href="/Ogrenci/Sil/@item.OGRENCIID" class="btn btn-sm btn-danger">Sil</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Öğrenci Ekle", "OgrenciAdd", "Ogrenci", new { @class = "btn btn-outline-primary" })
+

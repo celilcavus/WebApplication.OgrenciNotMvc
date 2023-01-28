@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model OgrenciNotMvc.Models.EntityFramework.TBLOGRENCILER
+
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.OGRENCIID)
+
+
+    @Html.Label("Öğrenci Adı")
+    @Html.TextBoxFor(x => x.OGRAD, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci Soyadı")
+    @Html.TextBoxFor(x => x.OGRSOYAD, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci Cinsiyet")
+    @Html.TextBoxFor(x => x.OGRCINSIYET, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci Fotoğraf")
+    @Html.TextBoxFor(x => x.OGRFOTOGRAF, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci Kulüp")
+    @Html.DropDownListFor(x => x.TBLKULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success" type="submit">Güncelle</button>
+}
+
+
